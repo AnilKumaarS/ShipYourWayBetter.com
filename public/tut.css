@@ -254,7 +254,7 @@ input[placeholder] {
     top: 0%;
     left: 0%;
     border: 2px solid;
-    height: 750px;
+    height: 850px;
     width: 100%;
     z-index: -1;
     opacity: 0.7;
@@ -297,7 +297,7 @@ aside {
     background-color: white;
     text-align: center;
     width: 400px;
-    height: 170px;
+    /* height: 190px; */
     /* grid-area: dri; */
     border-radius: 23px;
     /* background-position: left; */
@@ -321,6 +321,7 @@ aside {
 #contract {
     margin-left: 45%;
     margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 .dri:hover {
@@ -335,6 +336,7 @@ aside {
     padding: 3px;
     text-align: center;
     border-radius: 7px;
+    margin-bottom: 5px;
 }
 
 .btn-section a {
