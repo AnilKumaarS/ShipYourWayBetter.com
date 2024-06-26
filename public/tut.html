@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ship your way better</title>
+    <link rel="stylesheet" href="tut.css">
+    <link rel="stylesheet" media="screen and (max-width: 570px)" href="sywb.css">
+    <link rel="stylesheet" media="screen and ( min-width: 1050px)" href="sywb1.css">
+    <script defer src="sywb.js"></script>
+</head>
+
+<body>
+    <header class="container">
+        <h1>SHIP YOUR WAY BETTER </h1>
+        <h3>sywb@care.in</h3>
+        <img src="dv11y20222007132022-05-084598018600x400xx.webp" alt="">
+
+    </header>
+    <nav>
+        <div class="btn">
+            <button type="menu" onclick="togglemenu()" id="menu">&#9776</button>
+            <div id="ani" class="ani1">
+                <a href="tut.html" target="_self" class="slide">Home</a>
+                <a href="" class="slide">about us</a>
+                <a href="" class="slide">rate calculater</a>
+                <a href="" class="slide">contact us</a>
+            </div>
+            </button>
+        </div>
+        <ul>
+            <li><a href="tut.html" target="_self">Home</a></li>
+            <li>Rate calculater</li>
+            <li>Our products</li>
+            <li>Contact details</li>
+        </ul>
+        <div class="btn1">
+            <button type="button" onclick="sig1()"><a href="#signup">Sign Up</a></button>
+            <button type="button" onclick="sig2()"><a href="#signin">Sign In</a></button>
+        </div>
+    </nav>
+    <div class="before">
+        <section id="sec">
+            <div class="dri" id="fixed">
+                <h4>FIxed Rate</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit distinctio laborum sint. Minus
+                    alias
+                    ratione veniam corrupti, voluptatibus deserunt incidunt!</p>
+                <button class="btn-section"><a href="fexed_book.html" target="_top">BOOK NOW</a></button>
+            </div>
+            <div class="dri" id="bid">
+                <h4>Bid Rate</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit distinctio laborum sint. Minus
+                    alias
+                    ratione veniam corrupti, voluptatibus deserunt incidunt!</p>
+                <button class="btn-section"><a href="">BOOK NOW</a></button>
+            </div>
+            <div class="dri" id="contract">
+                <h4>Contract</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit distinctio laborum sint. Minus
+                    alias
+                    ratione veniam corrupti, voluptatibus deserunt incidunt!</p>
+                <button class="btn-section"><a href="">BOOK NOW</a></button>
+            </div>
+        </section>
+        <aside>
+            <div class="driver">
+                <form action="noaction.php" class="ani" id="signup">
+                    <h4>SIGN UP</h4>
+                    <div class="fill">
+                        <input type="text" placeholder="enter your name">
+                    </div>
+                    <div class="fill"> <input type="text" placeholder="vechiel number"></div>
+                    <div class="fill">
+                        <input type="number" placeholder="phone number">
+                    </div>
+                    <div class="fill">
+                        <input type="email" placeholder="email id">
+                    </div>
+                    <div class="fill">
+                        <input type="password" placeholder="enter password">
+                    </div>
+                    <div class="fill">
+                        <input type="password" placeholder="re-enter password">
+                    </div>
+                    <div class="fill">
+                        <input type="file" placeholder="upload rc">
+                    </div>
+                    <div class="fill"><button type="submit">submit now</button>
+                    </div>
+                    <p class="fill">Already have account <a href="#" target="_self" onclick="sig2()">SIGN IN</a></p>
+                </form>
+                <form action="noaction.php" class="ani" id="signin">
+                    <h4>SIGN IN</h4>
+                    <div class="fill">
+                        <input type="email" placeholder="email id">
+                    </div>
+                    <div class="fill">
+                        <input type="password" placeholder="enter password">
+                    </div>
+                    <div class="fill"><button type="submit">submit now</button>
+                    </div>
+                    <p class="fill">Don't have account<a href="#" onclick="sig1()">SIGN UP</a></p>
+                </form>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+/* header {
+    display: flex;
+    flex-direction: column;
+} */
+
+h1 {
+    font-size: 30px;
+    /* background-color: black; */
+}
+
+img {
+    display: none;
+}
+
+.before {
+    /* background-position: center center; */
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.before::before {
+    content: "";
+    /* position: absolute; */
+    display: none;
+}
+
+#fixed,
+#contract {
+    margin-left: 10px;
+}
+
+#sec {
+    justify-content: center;
+}
+
+.driver {
+    width: fit-content;
+}
+
+ul {
+    display: none;
+}

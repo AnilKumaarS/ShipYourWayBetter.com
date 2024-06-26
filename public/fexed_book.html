@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sywb/fixedRate/book</title>
+    <link rel="stylesheet" href="tut.css">
+    <link rel="stylesheet" media="screen and (max-width: 570px)" href="sywb.css">
+    <link rel="stylesheet" media="screen and ( min-width: 1050px)" href="sywb1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ol3/4.6.5/ol.css" type="text/css">
+    <script defer src="sywb.js"></script>
+    <style>
+        .big {
+            display: flex;
+        }
+
+        #map {
+            /* display: inline-block; */
+            height: 450px;
+            width: 100vw;
+            /* position: relative; */
+            z-index: -1;
+            border-bottom: 5px solid black;
+        }
+
+        .getLocation form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 410px;
+            width: 600px;
+            /* margin-top: 100px; */
+        }
+
+        .getLocationData {
+            margin: 5px;
+            text-align: center;
+            width: 300px;
+            height: 30px;
+            border-radius: 10px;
+        }
+
+        .getLocation select {
+            font-size: 20px;
+        }
+
+        .getLocation button {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .bookNow {
+            display: flex;
+            flex-direction: column;
+            height: 410px;
+            width: 600px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .book {
+            display: flex;
+            width: 400px;
+            height: 30px;
+            border: 2px solid black;
+            background-color: white;
+            margin: 5px;
+            align-items: center;
+            /* justify-content: center; */
+            border-radius: 10px;
+
+        }
+
+        .book p {
+            margin: 0%;
+            font-weight: bold;
+        }
+
+        .book .jjuj {
+            margin: auto;
+
+        }
+
+        .bookNowBtn {
+            background-color: black;
+            color: white;
+            margin-left: 200px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="btn">
+            <button type="menu" onclick="togglemenu()" id="menu">&#9776</button>
+            <div id="ani" class="ani1">
+                <a href="tut.html" class="slide">Home</a>
+                <a href="" class="slide">about us</a>
+                <a href="" class="slide">rate calculater</a>
+                <a href="" class="slide">contact us</a>
+            </div>
+            </button>
+        </div>
+        <ul>
+            <li><a href="tut.html" target="_self">Home</a></li>
+            <li>Rate calculater</li>
+            <li>Our products</li>
+            <li>Contact details</li>
+        </ul>
+        <div class="btn1">
+            <!-- <button type="button" onclick="sig1()"><a href="#">Sign Up</a></button> -->
+            <!-- <button type="button" onclick="sig2()"><a href="#">Sign In</a></button> -->
+        </div>
+    </nav>
+    <section class="big">
+        <div id="map"></div>
+        <div class="getLocation" id="getting-location">
+            <form target="_self">
+                <input class="getLocationData" type="text" name="start_locatin" placeholder="PickUp">
+                <input class="getLocationData" type="text" name="end_location" placeholder="DropOff">
+                <input class="getLocationData" type="datetime-local" name="end_location" placeholder="Pickup Date">
+                <input class="getLocationData" type="text" name="end_location" placeholder="Phone Number">
+                <select class="getLocationData" name="" id="selectweight">
+                    <option value="" label="Select Weight"></option>
+                    <option value="1">500kg-1500kg</option>
+                    <option value="2">1.5MT Above</option>
+                    <option value="3">container</option>
+                    <option value="4">Tailor and platform</option>
+                </select>
+                <!-- <label for="sas">Select Vechile</label> -->
+                <select class="getLocationData" name="sas" id="selectvechile">
+                    <option value="" label="Select Vechile"></option>
+                    <optgroup label="500kg-1500kg" hidden>
+                        <option value="1">TATA ACE, 1MT</option>
+                        <!-- <option value=""></option>
+                        <option value="">500-1500kg</option>
+                        <option value="">container</option>
+                        <option value="">custom</option> -->
+                    </optgroup>
+                    <optgroup label="1.5MT Above" hidden>
+                        <option value="2">TATA 407,2.5 MT </option>
+                        <option value="2">TATA - 12 Feet, 3 MT</option>
+                        <option value="2">Canter - 14 Feet, 3.5 MT</option>
+                        <option value="2">LPT - 17 Feet, 6 5 MT</option>
+                        <option value="2">1109 - 19 Feet, 7 MT</option>
+                        <option value="2">LP Truck - 18 Feet, 9 MT</option>
+                        <option value="2">Taurus - 22 Feet, 15 MT</option>
+                        <option value="2">Taurus - 24-25 Feet, 20 MT</option>
+                        <option value="2">Taurus - 25-26 Feet, 25 MT</option>
+                    </optgroup>
+                    <optgroup label="container" hidden>
+                        <option value="3">20' Container, 6.5 MT</option>
+                        <option value="3">22' Container, 6.5 MT</option>
+                        <option value="3">24' Container, 8 MT</option>
+                        <option value="3">28' Container, 8 MT</option>
+                        <option value="3">32' Container S. AXL, 7 MT</option>
+                        <option value="3">32' Container M.AXL, 14 MT</option>
+                        <option value="3">32' Container HQ, 7 MT</option>
+                        <option value="3">34' Container, 7 MT</option>
+                        <option value="3">40' Container, 15 MT</option>
+                    </optgroup>
+                    <optgroup label="Tailor and platform" hidden>
+                        <option value="4">Platform Truck 20 Feet, 9 MT</option>
+                        <option value="4">Platform Truck 22 Feet, 8 to 15 MT</option>
+                        <option value="4">Platform / Half Body JCB Truck 28 FT, 8 MT</option>
+                        <option value="4">40 Feet High Bed Trailer, 20 to 35 MT</option>
+                        <option value="4">50 Feet Trailer / Semi Trailer, 20 to 35 MT</option>
+                        <option value="4">40 Feet Semi Trailer, 20 to 35 MT</option>
+                    </optgroup>
+                </select>
+                <button type="button" class="getLocationData" onclick="gettingPrice()">submit</button>
+            </form>
+        </div>
+        <div class="bookNow" id="getting-price" style="display: none;">
+            <div class="book">
+                <p>ORDER ID : </p>
+                <p class="jjuj" id="orderID"></p>
+            </div>
+            <div class="book">
+                <p id="">Distance : </p>
+                <p class="jjuj" id="distanceID"></p>
+            </div>
+            <div class="book">
+                <p id="">Price : </p>
+                <p class="jjuj" id="priceID"></p>
+            </div>
+            <div class="book">
+                <p id="">Vechile Selected : </p>
+                <p class="jjuj" id="vechileID"></p>
+            </div>
+            <div class="book">
+                <p id="">PickUp DateTime : </p>
+                <p class="jjuj" id="pickupID"></p>
+            </div>
+            <div class="book">
+                <p id="">Contact Number : </p>
+                <p class="jjuj" id="contactID"></p>
+            </div>
+            <!-- <div class="book"> -->
+            <button class="bookNowBtn">BOOK NOW</button>
+            <!-- </div> -->
+        </div>
+    </section>
+
+
+</body>
+<script type="module" src="fixed.js"></script>
+<script>
+    // window.onload = function () {
+    //     var weightSel = document.getElementById("selectweight");
+    //     var vehicleSel = document.getElementById("selectvechile");
+
+    //     weightSel.onchange = function () {
+    //         var selectedValue = this.value;
+
+    //         // Hide all optgroups
+    //         // var optgroups = vehicleSel.getElementsByTagName("optgroup");
+    //         // for (var i = 0; i < optgroups.length; i++) {
+    //         //     optgroups[i].hidden = true;
+    //         // }
+
+    //         // Show the optgroup that matches the selected weight
+    //         var selectedOptgroup = vehicleSel.querySelector('optgroup[label="' + this.options[this.selectedIndex].text + '"]');
+    //         if (selectedOptgroup) {
+    //             selectedOptgroup.hidden = false;
+    //         }
+    //     };
+    // };
+
+
+    window.onload = function () {
+        const weightSel = document.getElementById("selectweight");
+        const vehicleSel = document.getElementById("selectvechile");
+
+        // Function to hide all optgroups
+        function hideAllOptgroups() {
+            const optgroups = vehicleSel.getElementsByTagName("optgroup");
+            for (let optgroup of optgroups) {
+                optgroup.hidden = true;
+            }
+        }
+
+        // Function to show the relevant optgroup based on selected weight
+        function showRelevantOptgroup(labelText) {
+            const optgroups = vehicleSel.getElementsByTagName(`optgroup`);
+            for (let i = 0; i < optgroups.length; i++) {
+                if (optgroups[i].label === labelText) {
+                    optgroups[i].hidden = false;
+                    break;
+                }
+            }
+        }
+
+        weightSel.onchange = function () {
+            hideAllOptgroups();
+            const selectedOption = weightSel.options[weightSel.selectedIndex].text;
+            showRelevantOptgroup(selectedOption);
+        }
+    }
+
+    function gettingPrice() {
+        let getdata = document.getElementById("getting-location");
+        let getprice = document.getElementById("getting-price");
+        // addEventListener("click", () => {
+        //     getdata.style.display = "none"
+        //     getprice.style.display = "block"
+        // })
+        if (getdata.style.display != "none") {
+            getdata.style.display = "none"
+            getprice.style.display = "flex"
+        }
+
+    }
+</script>
+
+</html>
